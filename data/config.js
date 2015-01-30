@@ -6,7 +6,7 @@ var
 
 
 // RDF Interfaces implementation + RDF-Ext
-config.rdf = require('rdf-interfaces');
+global.rdf = config.rdf = require('rdf-interfaces');
 require('rdf-ext')(config.rdf);
 
 /*config.rdf = new (require('rdf_js_interface')).RDFEnvironment();
@@ -26,7 +26,6 @@ config.store = new config.rdf.InMemoryStore();
 // initial graph data
 config.graphs = {
   'https://localhost:8443/.access': './data/access.ttl',
-  'https://localhost:8443/blog': './data/blog.ttl',
   'https://localhost:8443/card': './data/card.ttl'
 };
 
@@ -40,7 +39,7 @@ config.webid = {
 
 // UAC
 config.uac = {
-  'disable': false,
+  'disable': true,
   'graph': 'https://localhost:8443/.access'
 };
 
@@ -71,6 +70,14 @@ config.core = {
   'port': '8443',
   'basePath': '',
   'proxy': false
+};
+
+// BoomerangJS
+config.boomerang = {
+  'apps': [{
+      'base': 'https://localhost:8443/apps/pi/',
+      'path': 'boomerang-app/example/pi/files/pi.js'
+  }]
 };
 
 module.exports = config;
