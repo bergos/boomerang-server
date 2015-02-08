@@ -37,6 +37,12 @@ config.webid = {
   'pkcs12File': './data/webid.p12'
 };
 
+// Authentication
+config.authn = {
+  'enableWebId': false,
+  'enableSessionLogin': true
+};
+
 // UAC
 config.uac = {
   'disable': true,
@@ -50,7 +56,7 @@ config.ldp = {
 
 // tls
 config.tls = {
-  'disable': false,
+  'disable': true,
   'keyFile': './data/localhost.key',
   'certFile': './data/localhost.crt'
 };
@@ -67,16 +73,18 @@ config.session = {
 // core
 config.core = {
   'host': 'localhost',
-  'port': '8443',
+  'port': '8080',
   'basePath': '',
   'proxy': false
 };
 
 // BoomerangJS
 config.boomerang = {
+  'url': 'http://localhost:8080/boomerang',
   'apps': [{
-      'base': 'https://localhost:8443/apps/pi/',
-      'path': 'boomerang-app/example/pi/files/pi.js'
+    'id': 'pi',
+    'base': 'http://localhost:8080/apps/pi/',
+    'path': 'boomerang-app/example/pi/files/pi.js'
   }]
 };
 

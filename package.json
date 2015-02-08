@@ -39,7 +39,8 @@
     "rdf-interfaces": "0.1.*",
     "rdf-ext": "0.1.*",
     "rdf-jsonify": "0.1.*",
-    "uac": "0.1.*"
+    "uac": "0.1.*",
+    "uuid": "2.*"
   },
   "readmeFilename": "README.md"
 }
