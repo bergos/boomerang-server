@@ -39,7 +39,7 @@ config.webid = {
 
 // Authentication
 config.authn = {
-  'enableWebId': false,
+  'enableWebId': true,
   'enableSessionLogin': true
 };
 
