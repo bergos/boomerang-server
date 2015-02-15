@@ -1,6 +1,6 @@
 {
   "name": "boomerang-server",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "LDApp based BoomerangJS server",
   "keywords": [
     "BoomerangJS",
