@@ -14,6 +14,7 @@ var
 
 coreModule.init()
   .then(function (app) { return authNModule.init(app); })
+  .then(function (app) { app.use('/', express.static(path.join(__dirname, 'public/'))); return app; })
   .then(function (app) { app.use('/client/', express.static(path.join(__dirname, 'node_modules/boomerang-client/dist/'))); return app; })
   .then(function (app) { app.use('/apps/', express.static(path.join(__dirname, 'node_modules/boomerang-app/example/'))); return app; })
   .then(function (app) { return graphModule.init(app); })
